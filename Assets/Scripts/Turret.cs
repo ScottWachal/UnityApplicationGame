@@ -18,12 +18,10 @@ public class Turret : MonoBehaviour {
         inventory = GetComponent<Inventory>();
     }
     
-	// Use this for initialization
 	void Start () {
         turretEulers = turretPosition.transform.eulerAngles;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         TurretMove();
         Shoot();
@@ -51,6 +49,10 @@ public class Turret : MonoBehaviour {
             bulletInstance.AddForce(turretPosition.up * bulletSpeed);
             inventory.myAmmo.bullets--;
             GameObject.Find("AmmoText").guiText.text = "Ammo: " + inventory.myAmmo.bullets;
+            if (inventory.myAmmo.bullets == 0)
+            {
+                GameObject.Find("AmmoText").guiText.material.color = Color.red;
+            }
         }
     }
 }

@@ -30,7 +30,6 @@ public class RainDrops : MonoBehaviour {
         GameObject.Find("MissedText").guiText.text = "Missed: " + missed;
     }
 	
-	// Update is called once per frame
 	void Update () {
         Screen.lockCursor = true;
         while (currentRainDrops < maxRainDrops)
