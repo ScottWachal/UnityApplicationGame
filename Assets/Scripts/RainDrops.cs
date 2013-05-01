@@ -6,6 +6,7 @@ public class RainDrops : MonoBehaviour {
     public GameObject rainDrop;
     static int currentRainDrops;
     static int score;
+    static int missed;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,11 @@ public class RainDrops : MonoBehaviour {
     private static void UpdateScoreText()
     {
         GameObject.Find("ScoreText").guiText.text = "Score: " + score;
+    }
+
+    private static void UpdateMissedText()
+    {
+        GameObject.Find("MissedText").guiText.text = "Missed: " + missed;
     }
 	
 	// Update is called once per frame
@@ -45,8 +51,9 @@ public class RainDrops : MonoBehaviour {
     internal static void HitGround()
     {
         currentRainDrops--;
-        score--;
-        UpdateScoreText();
+        missed++;
+        UpdateMissedText();
     }
+
 
 }
