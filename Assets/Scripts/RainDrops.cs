@@ -54,6 +54,4 @@ public class RainDrops : MonoBehaviour {
         missed++;
         UpdateMissedText();
     }
-
-
 }

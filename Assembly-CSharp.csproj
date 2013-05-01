@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{8F3B7C17-3B56-E376-0B01-E13A0430641E}</ProjectGuid>
+	<ProjectGuid>{A606DC8A-0A7F-F0C4-BBB7-90CC1164EF7F}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -51,16 +51,14 @@
      <Compile Include="Assets\Scripts\MenuObject.cs" />
      <Compile Include="Assets\Scripts\QuitToMenu.cs" />
      <Compile Include="Assets\Scripts\RainDrops.cs" />
-     <Compile Include="Assets\Scripts\Shooting.cs" />
      <Compile Include="Assets\Scripts\Tank.cs" />
      <Compile Include="Assets\Scripts\TextFade.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{137FDB18-627F-2002-F6FB-B358B3AE1ACD}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{0B620A87-765C-E433-EFF7-1630B24BA9A4}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

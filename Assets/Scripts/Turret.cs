@@ -10,6 +10,14 @@ public class Turret : MonoBehaviour {
 
     Vector3 turretEulers;
 
+    private Inventory inventory;
+
+
+    void Awake()
+    {
+        inventory = GetComponent<Inventory>();
+    }
+    
 	// Use this for initialization
 	void Start () {
         turretEulers = turretPosition.transform.eulerAngles;
@@ -34,13 +42,15 @@ public class Turret : MonoBehaviour {
 
     void Shoot()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && inventory.myAmmo.bullets > 0)
         {
             float tipOffset = turretPosition.transform.localScale.y / 2 + 5f;
             Vector3 tipPoint = turretPosition.transform.TransformPoint(new Vector3(0, tipOffset, 0));
 
             Rigidbody bulletInstance = Instantiate(bulletPrefab, tipPoint, turretPosition.rotation) as Rigidbody;
             bulletInstance.AddForce(turretPosition.up * bulletSpeed);
+            inventory.myAmmo.bullets--;
+            GameObject.Find("AmmoText").guiText.text = "Ammo: " + inventory.myAmmo.bullets;
         }
     }
 }
